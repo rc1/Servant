@@ -24,9 +24,6 @@ app.get('/', function(req, res) {
         title: 'Express'
     });
 });
-
-console.log(process.argv);
-
 // start
 if (process.argv.length == 3) {
     app.listen(process.argv[2]);
