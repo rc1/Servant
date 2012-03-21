@@ -14,6 +14,7 @@ app.configure(function() {
     app.use(app.router);
     app.use(express.compiler({src: __dirname + '/public/', enable:['less']}));
     app.use(express.static(__dirname + '/public'));
+    app.use(express.directory(__dirname + '/public'));
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 //
