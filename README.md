@@ -12,7 +12,7 @@ Specify port:
 
     $ node app.js -p 8000
 
-#### File watching &amp; auto reloading
+#### File watching & auto reloading
 
 To start with file watching:
 
@@ -20,7 +20,8 @@ To start with file watching:
 
 to have your webpage auto reloading/refresh, include:
 
-    <script src="/socket.io/socket.io.js"> </script><script src="/reload.js"></script>
+    <script src="/socket.io/socket.io.js"> 
+    </script><script src="/reload.js"></script>
 
 
 #### Jade and Express routing
