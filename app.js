@@ -46,7 +46,7 @@ var argv = require('optimist')
             .alias('w', 'watch')
             .describe('w', 'watch files for changes and reload').argv,
     port = argv.p || 4000,
-    watch = argv.w || true;
+    watch = argv.w || false;
 
 app.listen(port);
 
