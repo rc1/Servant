@@ -4,10 +4,10 @@
     "private" : true , 
     "dependencies" : { 
         "jade" : ">= 0.0.1",
-        "connect-less-errors" : "0.1.1",
-        "watch" : "0.5.1",
-        "socket.io" : "0.9.6",
-        "optimist" : "0.3.1",
-        "express" : "2.5.9"
+        "connect-less-errors" : ">= 0.1.1",
+        "watch" : ">= 0.5.1",
+        "socket.io" : ">= 0.9.6",
+        "optimist" : ">= 0.3.1",
+        "express" : ">= 2.5.9"
     }
 }
