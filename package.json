@@ -1,6 +1,6 @@
 {
     "name" : "simple-express-server", 
-    "version" : "0.3.0", 
+    "version" : "1.0.0", 
     "private" : true , 
     "dependencies" : { 
         "jade" : ">= 0.0.1",
@@ -8,7 +8,8 @@
         "watch" : ">= 0.5.1",
         "socket.io" : ">= 0.9.6",
         "optimist" : ">= 0.3.1",
-        "express" : ">= 2.5.9",
-        "less" : "*"
+        "express" : ">= 3.x",
+        "less" : "*",
+        "less-middleware" : "*"
     }
 }
