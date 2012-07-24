@@ -2,6 +2,7 @@
 var express = require('express');
 var app = module.exports = express.createServer();
 var lessErrorHandler = require ('connect-less-errors');
+var lessMiddleware = require('less-middleware');
 
 // configure
 app.configure(function() {
@@ -13,7 +14,7 @@ app.configure(function() {
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.compiler({src: __dirname + '/public/', enable:['less']}));
+    lessMiddleware({src: __dirname+'/public/', compress:false, once:false, debug:true }), // set once to false for production
     app.use(lessErrorHandler);
     app.use(express.static(__dirname + '/public'));
     app.use(express.directory(__dirname + '/public'));
@@ -91,4 +92,4 @@ if (watch) {
     console.log("Socket.io will annouce file changes");
 }
 
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+console.log("Express server listening on port %d in %s mode", port, app.settings.env);
