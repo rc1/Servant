@@ -1,16 +1,13 @@
 {
-  "name": "simple-express-server",
-  "version" : "1.3.0", 
+  "name": "application-name",
+  "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "node app"
+  },
   "dependencies": {
-    "jade": ">= 0.0.1",
-    "connect-less-errors": ">= 0.1.1",
-    "watch": ">= 0.5.1",
-    "socket.io": ">= 0.9.6",
-    "optimist": ">= 0.3.1",
-    "express": "2.x",
-    "less": "*",
-    "less-middleware": "*",
-    "zlib": "~1.0.5"
+    "express": "3.0.3",
+    "jade": "*",
+    "less-middleware": "~0.1.11"
   }
 }
