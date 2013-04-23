@@ -1,40 +1,5 @@
-# basic express webserver
+# Basic express.js webserver
 
-To setup:
+Less.js middleware, directory listing, routes in app file, jade pretty print, port 3000 or `process.env.PORT`.
 
-    $ npm install
-
-To start:
-
-    $ node app.js
-
-Specify port:
-
-    $ node app.js -p 8000
-
-#### File watching & auto reloading
-
-To start with file watching:
-
-    $ node app.js -w
-
-to have your webpage auto reloading/refresh, include:
-
-    <script src="/socket.io/socket.io.js"> 
-    </script><script src="/reload.js"></script>
-
-
-#### Jade and Express routing
-
-In `app.js` uncomment the following lines:
-
- 
-    app.get('/', function(req, res) {
-        res.render('index', {
-            title: 'Simple Server',
-            watch: {
-                enabled: watch,
-                script: '<script src="/socket.io/socket.io.js"></script><script src="/reload.js"></script>'
-            }
-        });
-    });
+Adapted from Express.js v3.0.3 project generator.
