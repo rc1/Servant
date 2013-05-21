@@ -1,5 +1,15 @@
-# Basic express.js webserver
+# Express.js Simple Server
+## Version 3
 
-Less.js middleware, directory listing, routes in app file, jade pretty print, port 3000 or `process.env.PORT`.
+Basic express.js 3 set up to server static files with:
 
-Adapted from Express.js v3.0.3 project generator.
+### Features
+
+* Live Reload
+* Compiles .less files in public
+* Compiles .jade files in public
+* Directory listing
+
+### Usage
+
+    WATCH=1 PORT=3001 node app.js
