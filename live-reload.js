@@ -41,7 +41,8 @@ module.exports.watch = function (options) {
 
     // Create a watch for each folder
     var gaze = new Gaze(pathPatterns);
-    gaze.on('all', function(event, filepath) { 
+    gaze.on('all', function(event, filepath) {
+        console.log("File changed:", filepath); 
         broadcast(path.extname(filepath));
     });
 };

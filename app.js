@@ -52,13 +52,11 @@ var server = http.createServer(app);
 // To watch `WATCH=1 node app.js`
 if (shouldWatchFiles) {
     liveReload.watch({
-        pathPatterns: [path.join(__dirname, 'public')+"/**/*"],
+        pathPatterns: [serveFromDirectory+"/**/*"],
         server: server,
         app: app
     });
 }
-
-
 server.listen(app.get('port'), function() {
     console.log( lcyan("Servant", "serving")+ ":" );
     console.log( bold("\n   " + serveFromDirectory) );
