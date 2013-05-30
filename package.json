@@ -1,10 +1,17 @@
 {
-  "name": "expressjs-simple-server",
-  "version": "3.0.0",
-  "private": true,
+  "name": "servant",
+  "version": "4.0.0",
+  "private": false,
+  "preferGlobal": true,
+  "author": "Ross Cairns <r@theworkers.net>",
+  "description": "Static file server with fast live reloading, jade compiling, less compiling, directory listing. Command line application or basic boilerplate express.js app.",
   "scripts": {
-    "start": "node app"
+    "start": "node app.js"
   },
+  "bin": {
+    "servant": "./bin/servant"
+  },
+  "license": "MIT",
   "dependencies": {
     "express": "3.0.3",
     "jade": "*",
