@@ -25,7 +25,8 @@ app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     var jadeOptions = {
-        pretty: true
+        pretty: true,
+        basedir: serveFromDirectory
     };
     var jadeLayoutFile = path.join(serveFromDirectory, 'layout.jade');
     if ( fs.existsSync( jadeLayoutFile ) ) {
