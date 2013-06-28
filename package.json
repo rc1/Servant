@@ -1,6 +1,6 @@
 {
   "name": "servant",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "private": false,
   "preferGlobal": true,
   "author": "Ross Cairns <r@theworkers.net>",
