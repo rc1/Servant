@@ -1,23 +1,18 @@
 #!/usr/bin/env node
 // Look for options -d or --dirname
 // and append process.argv if no found
+ 
 var foundDirectoryArg = false;
 process.argv.forEach(function (arg) {
-	// see if the arg only has one dash
-	if (arg.search(/(?!.*-)[a-zA-Z0-9-]/)===1) {
-		if (arg.search('d') > 0) {
-			// Found d option short form
-			foundDirectoryArg = true;
-		}
-		if (arg === '--dirname') {
-			foundDirectoryArg = true;
-		}
-	}
+    if (arg.match(/^-d$/) || arg.match(/^--dirname$/)) {
+        foundDirectoryArg = true;
+    }
 });
+ 
 if (!foundDirectoryArg) {
-	process.argv.push("-d");
-	process.argv.push(".");
+    process.argv.push("-d");
+    process.argv.push(".");
 }
-
+ 
 // start the app
 require('./../app.js');
