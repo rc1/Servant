@@ -19,6 +19,7 @@ module.exports.watch = function (options) {
         };
     });
     var broadcast = _.throttle(function (message) {
+        console.log("Broadcasting");
         for (var ws in socketConnections) {
             socketConnections[ws].send(message);
         }
@@ -30,6 +31,7 @@ module.exports.watch = function (options) {
         res.end("var socket = new WebSocket('ws://'+window.location.host+'/'); \n\
             socket.onmessage = function (message) { \n\
                 if (message.data === '.css' || message.data == '.less') { \n\
+                    console.log('Reloading css'); \n\
                     var queryString = '?reload=' + new Date().getTime(); \n\
                     $('link[rel=\"stylesheet\"]').each(function () { \n\
                         if (this.href.indexOf(\"typekit\") === -1) { \n\
