@@ -4,14 +4,14 @@
  
 var foundDirectoryArg = false;
 process.argv.forEach(function (arg) {
-    if (arg.match(/^-d$/) || arg.match(/^--dirname$/)) {
-        foundDirectoryArg = true;
-    }
+ if (arg === '-d' || arg === '--dirname') {
+		foundDirectoryArg = true;
+	}
 });
  
 if (!foundDirectoryArg) {
-    process.argv.push("-d");
-    process.argv.push(".");
+	process.argv.push("-d");
+	process.argv.push(".");
 }
  
 // start the app
