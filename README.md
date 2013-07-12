@@ -21,7 +21,7 @@ _* Requests for '/' will also look for a index.jade file to compile._
 
 ## Command line options
 
-    -l, --livereload  Enable live reload
+    -w, --watch  Enable live reload
     -p, --port
 
 ## Command line tool usage:
