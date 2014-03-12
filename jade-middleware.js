@@ -17,13 +17,15 @@ module.exports = function (options) {
     var jadeOptions = options.jadeOptions;
 
     return function (req, res, next) {
-        hasHTMLExtension(req.url, function (yN, extension) {
+        // remove any query string parameters
+        var url = req.url.split('?')[0];
+        hasHTMLExtension(url, function (yN, extension) {
             // if not finish
             if (!yN) { 
                 next(); 
                 return; 
             } 
-            hasMatchingJadeFileInPages(src, req.url, pages, jadeOptions, function (yN, page) {
+            hasMatchingJadeFileInPages(src, url, pages, jadeOptions, function (yN, page) {
                 if (yN) { 
                     page.shouldRenderToFile(function (yN) {
                         if (yN) {
