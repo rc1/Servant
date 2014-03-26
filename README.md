@@ -25,7 +25,7 @@ _* Requests for '/' will also look for a index.jade file to compile._
     -p, --port
     --watch-pattern  Pattern for watching foles
 
-### Watching pattern examples
+### Watch pattern examples
 
 * watch everything (default) `servant -w '/**/*'`
 * watch all folders starting with a number (i.e. 0) `servant -w --watch-pattern '/[0-9]*/**/*'`
