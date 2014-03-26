@@ -23,6 +23,12 @@ _* Requests for '/' will also look for a index.jade file to compile._
 
     -w, --watch  Enable live reload
     -p, --port
+    --watch-pattern  Pattern for watching foles
+
+### Watching pattern examples
+
+* watch everything (default) `servant -w '/**/*'`
+* watch all folders starting with a number (i.e. 0) `servant -w --watch-pattern '/[0-9]*/**/*'`
 
 ## Command line tool usage:
 

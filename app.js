@@ -13,9 +13,14 @@ if (argv.h || argv.help) {
     return;
 }
 
-// Options
+// ## Options
 var serveFromDirectory = path.resolve( argv.d || argv.dirname || path.join(__dirname, 'public/') );
 var shouldWatchFiles = process.env.LIVE_RELOAD || argv.l || argv.livereload; 
+// Watch pattern folder
+// For example
+// * watch everything (default) `servant -w '/**/*'`
+// * watch all folders starting with a number (i.e. 0) `servant -w --watch-pattern '/[0-9]*/**/*'`
+var watchPattern = serveFromDirectory + (process.env.WATCH_PATTERN || argv['watch-pattern'] || '/**/*');
 // legacy
 shouldWatchFiles = shouldWatchFiles || process.env.WATCH || argv.w || argv.watch; 
 
@@ -53,7 +58,7 @@ var server = http.createServer(app);
 // To watch `WATCH=1 node app.js`
 if (shouldWatchFiles) {
     liveReload.watch({
-        pathPatterns: [serveFromDirectory+"/**/*"],
+        pathPatterns: [watchPattern],
         server: server,
         app: app
     });
