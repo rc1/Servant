@@ -41,9 +41,7 @@ app.configure(function(){
         src: serveFromDirectory,
         jadeOptions: jadeOptions
     }));
-    app.use(lessMiddleware({
-        src: serveFromDirectory
-    }));
+    app.use(lessMiddleware(serveFromDirectory));
     app.use(express.static(serveFromDirectory));
     app.use(express.directory(serveFromDirectory));
 });
