@@ -14,7 +14,7 @@ if (argv.h || argv.help) {
 }
 
 // ## Options
-var serveFromDirectory = path.resolve( argv.d || argv.dirname || path.join(__dirname, 'public/') );
+var serveFromDirectory = path.resolve( process.env.DIR || argv.d || argv.dirname || path.join(__dirname, 'public/') );
 var shouldWatchFiles = process.env.LIVE_RELOAD || argv.l || argv.livereload; 
 // Watch pattern folder
 // For example
