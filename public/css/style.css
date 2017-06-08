@@ -58,3 +58,6 @@ q:after {
 body {
   background-color: white;
 }
+body h1 {
+  color: orange;
+}
