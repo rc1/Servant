@@ -1,4 +1,7 @@
 # Servant
+
+![giphy-downsized-large](https://user-images.githubusercontent.com/166915/27094388-d03e0fba-5061-11e7-9d1a-a8a392d042b8.gif)
+
 ## Version 4.1.0
 
 Lean [express.js](http://expressjs.com/) project for static website prototyping with jade & less/sass compiling, fast live reloading, directory listing etc.
