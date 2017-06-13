@@ -1,7 +1,7 @@
 # Servant
-## Version 4.0.0
+## Version 4.1.0
 
-Lean [express.js](http://expressjs.com/) project for static website prototyping with jade & less compiling, fast live reloading, directory listing etc.
+Lean [express.js](http://expressjs.com/) project for static website prototyping with jade & less/sass compiling, fast live reloading, directory listing etc.
 
 Server any folder direct from the command line with just:
 
@@ -12,7 +12,7 @@ Alternatively use as a minimal express.js server project for static websites wit
 ### Features
 
 * Very fast live reloading with [ws](https://github.com/einaros/ws) and [gaze](https://github.com/shama/gaze)
-* Compiles matching .less files for any .css requests
+* Compiles matching .less or .scss files for any .css requests
 * Compiles matching .jade files for any .html requests*
 * Optional .jade layout file in root
 * Directory listing
@@ -34,7 +34,7 @@ _* Requests for '/' will also look for a index.jade file to compile._
 
 Install globally:
 
-    $ npm install -g servant 
+    $ npm install -g servant
 
 From any folder:
 

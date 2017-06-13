@@ -2,6 +2,7 @@
 var express = require('express');
 var http = require('http');
 var lessMiddleware = require('less-middleware');
+var sassMiddleware = require('node-sass-middleware');
 var path = require('path');
 var fs = require('fs');
 var argv = require('optimist').argv;
@@ -15,14 +16,14 @@ if (argv.h || argv.help) {
 
 // ## Options
 var serveFromDirectory = path.resolve( process.env.DIR || argv.d || argv.dirname || path.join(__dirname, 'public/') );
-var shouldWatchFiles = process.env.LIVE_RELOAD || argv.l || argv.livereload; 
+var shouldWatchFiles = process.env.LIVE_RELOAD || argv.l || argv.livereload;
 // Watch pattern folder
 // For example
 // * watch everything (default) `servant -w '/**/*'`
 // * watch all folders starting with a number (i.e. 0) `servant -w --watch-pattern '/[0-9]*/**/*'`
 var watchPattern = serveFromDirectory + (process.env.WATCH_PATTERN || argv['watch-pattern'] || '/**/*');
 // legacy
-shouldWatchFiles = shouldWatchFiles || process.env.WATCH || argv.w || argv.watch; 
+shouldWatchFiles = shouldWatchFiles || process.env.WATCH || argv.w || argv.watch;
 
 var app = express();
 app.configure(function(){
@@ -42,12 +43,13 @@ app.configure(function(){
         jadeOptions: jadeOptions
     }));
     app.use(lessMiddleware(serveFromDirectory));
+    app.use(sassMiddleware({src: serveFromDirectory}));
     app.use(express.static(serveFromDirectory));
     app.use(express.directory(serveFromDirectory));
 });
 
 app.configure('production', function(){
-    console.log("Hmm.. servant should not be used for production");
+  console.log("Hmm.. servant should not be used for production");
 });
 
 var server = http.createServer(app);
